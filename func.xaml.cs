@@ -53,6 +53,7 @@ namespace WpfApp3
 
         private void Window_Closed(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            
             Application.Current.Shutdown();
         }
     }

@@ -53,8 +53,8 @@ namespace WpfApp3
 
         private void Window_Closed(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            e.Cancel = true;
- Hide();
+            e.Cancel = true; 
+            Hide();
         }
     }
 }
