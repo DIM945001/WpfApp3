@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Threading;
 
 namespace WpfApp3
 {
@@ -49,6 +50,14 @@ namespace WpfApp3
         {
             e.Cancel = true;
             Hide();
+        }
+
+        private async void button2_Click(object sender, RoutedEventArgs e)
+        {
+            button2.Content = "Проверка оплаты...";
+            await Task.Delay(3000);
+            button2.Content = "Оплачено";
+            
         }
     }
 }

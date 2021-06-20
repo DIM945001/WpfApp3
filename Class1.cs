@@ -8,7 +8,7 @@ namespace WpfApp3
 {
     class Class1
     {
-        public client client = new client();
+        public client client = new client(); // неиспользуемый класс
         
     }
 }
