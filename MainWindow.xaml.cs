@@ -25,7 +25,7 @@ namespace WpfApp3
             
             InitializeComponent();
         }
-        func Funct = new func();
+        Class1 c1 = new Class1();
 
         //public DataTable Select(string selectSQL) // функция подключения к базе данных и обработка запросов
         // {
@@ -54,28 +54,48 @@ namespace WpfApp3
             //        DataTable dt_user = Select("SELECT * FROM [dbo].[users] WHERE [login] = '" + textbox1.Text + "' AND [password] = '" + textbox2.Password + "'");
             //        if (dt_user.Rows.Count > 0) // если такая запись существует       
             //        {
-            
+        
             switch (comboBox.Text)
             {
                 case "Клиент":
-
+                    c1.Funct.label1.Content = "Клиент";
+                    c1.Funct.listbut.Visibility = Visibility.Hidden;
+                    c1.Funct.taskbut.Visibility = Visibility.Hidden;
                     break;
                 case "Инспектор":
-                    Funct.listbut.Visibility = Visibility.Visible;
+                    c1.Funct.uslug_but.Visibility = Visibility.Hidden;
+                    c1.Funct.listbut.Visibility = Visibility.Visible;
+                    c1.Funct.label1.Content = "Инспектор";
                     break;
                 case "Бухгалтер":
-                    Funct.listbut.Visibility = Visibility.Visible;
-                    Funct.taskbut.Visibility = Visibility.Visible;
+                    c1.Funct.listbut.Visibility = Visibility.Visible;
+                    c1.Funct.taskbut.Visibility = Visibility.Visible;
+                    c1.Funct.label1.Content = "Бухгалтер";
                     break;
 
             }
             MessageBoxResult messageBoxResult = MessageBox.Show("Пользователь авторизовался", comboBox.Text); // говорим, что авторизовался
-            this.Close();
-            Funct.Show();
-
+            this.Visibility = Visibility.Hidden;
+            try
+            {
+                c1.Funct.ShowDialog();
+                    if (DATA.b == 1)
+            {
+                this.Visibility = Visibility.Visible;
+            }
+                DATA.b = 0;
+            }
+            catch
+            {
+                
+               // c1.Funct.Visibility = Visibility.Visible;
+                
+            }
+            
 
         }
 
+    
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();

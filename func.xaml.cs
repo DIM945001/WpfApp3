@@ -24,21 +24,21 @@ namespace WpfApp3
             InitializeComponent();
         }
         uslugi Uslugi = new uslugi();
-       
-        
+
+
         
         public string a;
-        
+
         private void uslug_but_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Uslugi.Show();
         }
 
         private void listbut_Click(object sender, RoutedEventArgs e)
         {
-           
-           Uslugi.client.Show();
+
+            Uslugi.client.Show();
         }
 
         private void taskbut_Click(object sender, RoutedEventArgs e)
@@ -46,15 +46,23 @@ namespace WpfApp3
             Uslugi.client.Reports.Show();
         }
 
-        private void Window_Closed(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         private void Window_Closed(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            App.Current.Shutdown();
+         //   e.Cancel = true;
             
-            Application.Current.Shutdown();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+            DATA.b = 1;
+            Hide();
+            
+
         }
     }
 }
+

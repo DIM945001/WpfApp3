@@ -10,6 +10,9 @@
         <Button x:Name="uslug_but" FontSize="38" Content="Услуги" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="574" Height="98" Click="uslug_but_Click"/>
         <Button x:Name="listbut" Visibility="Hidden" FontSize="38" Content="Список клиентов" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="574" Height="121" Click="listbut_Click"/>
         <Button x:Name="taskbut" Visibility="Hidden" FontSize="38" Content="Отчеты" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Width="574" Height="113" Click="taskbut_Click"/>
+        <Button x:Name="button" Content="Сменить пользователя" FontSize="29" HorizontalAlignment="Left" Margin="272,10,0,0" VerticalAlignment="Top" Width="312" Height="60" Click="button_Click"/>
+        <Label x:Name="label" FontSize="15" Content="Вы вошли как:" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="113" Height="60"/>
+        <Label x:Name="label1" FontSize="15" Content="null" HorizontalAlignment="Left" Margin="144,10,0,0" VerticalAlignment="Top" Width="123" Height="57"/>
 
     </Grid>
 </Window>

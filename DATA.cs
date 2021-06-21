@@ -10,6 +10,7 @@ namespace WpfApp3
     {
        public static string buffer;
        public static string reportbuffer;
+       public static int b = 0;
     }
 
 }
