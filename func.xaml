@@ -5,14 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="func" Height="600" Width="700" Closing="Window_Closed" ResizeMode="NoResize">
+        Title="func" Height="600" Width="700" Closing="Window_Closed" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="#FFA9C9FF" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Button x:Name="uslug_but" FontSize="38" Content="Услуги" HorizontalAlignment="Left" Margin="10,125,-0.4,0" VerticalAlignment="Top" Width="684" Height="106" Click="uslug_but_Click"/>
-        <Button x:Name="listbut"  FontSize="38" Content="Список клиентов" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="674" Height="105" Click="listbut_Click"/>
-        <Button x:Name="taskbut"  FontSize="38" Content="Отчеты" HorizontalAlignment="Left" Margin="10,378,0,0" VerticalAlignment="Top" Width="674" Height="105" Click="taskbut_Click"/>
-        <Button x:Name="button" Content="Сменить пользователя" FontSize="29" HorizontalAlignment="Left" Margin="339,10,0,0" VerticalAlignment="Top" Width="345" Height="60" Click="button_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0048A2" Offset="0.346"/>
+                <GradientStop Color="#FF6FAFFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Style="{StaticResource RoundedButtonStyle}" x:Name="uslug_but" FontSize="38" Content="Услуги" HorizontalAlignment="Left" Margin="10,125,-0.4,0" VerticalAlignment="Top" Width="684" Height="106" Click="uslug_but_Click"/>
+        <Button Style="{StaticResource RoundedButtonStyle}" x:Name="listbut"  FontSize="38" Content="Список клиентов" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="674" Height="105" Click="listbut_Click"/>
+        <Button Style="{StaticResource RoundedButtonStyle}" x:Name="taskbut"  FontSize="38" Content="Отчеты" HorizontalAlignment="Left" Margin="10,378,0,0" VerticalAlignment="Top" Width="674" Height="105" Click="taskbut_Click"/>
+        <Button Style="{StaticResource RoundedButtonStyle}" x:Name="button" Content="Сменить пользователя" FontSize="29" HorizontalAlignment="Left" Margin="339,10,0,0" VerticalAlignment="Top" Width="345" Height="60" Click="button_Click"/>
         <Label x:Name="label" FontSize="15" Content="Вы вошли как:" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="113" Height="60"/>
         <TextBlock x:Name="label1" FontSize="15" TextWrapping="Wrap" Text="null" HorizontalAlignment="Left" Margin="144,10,0,0" VerticalAlignment="Top" Width="173" Height="57"/>
+        <TextBlock FontSize="30" x:Name="label2" TextWrapping="Wrap" Text="Label" HorizontalAlignment="Left" Margin="26,510,0,0" VerticalAlignment="Top" Height="50" Width="658" Foreground="White"/>
 
     </Grid>
 </Window>

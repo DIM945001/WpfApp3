@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Threading;
+using System.Timers;
 
 namespace WpfApp3
 {
@@ -21,12 +23,34 @@ namespace WpfApp3
     {
         public func()
         {
+            
+            
             InitializeComponent();
         }
         uslugi Uslugi = new uslugi();
+        public int ss = 600;
 
 
-        
+        public void DisplayTimeEvent(object source, EventArgs e)
+            {
+            
+            ss--;
+            label2.Text ="время сеанса" + ss + "с";
+            if (ss == 300)
+            {
+                label2.Text = "через" + ss + "с будет автоматический выход из системы";
+            }
+        }
+
+
+        private void timerTick(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("sho");
+        }
+
+
+
         public string a;
 
         private void uslug_but_Click(object sender, RoutedEventArgs e)
@@ -62,6 +86,22 @@ namespace WpfApp3
             Hide();
             
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Threading.DispatcherTimer myTimer = new System.Windows.Threading.DispatcherTimer();
+            myTimer.Tick += new EventHandler(DisplayTimeEvent);
+            myTimer.Interval = new TimeSpan(0, 0, 1); // 1000 ms is one second
+            myTimer.Start();
+
+            System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+
+            timer.Tick += new EventHandler(timerTick);
+            timer.Interval = new TimeSpan(0, 10, 0);
+            timer.Start();
+
+            
         }
     }
 }

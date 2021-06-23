@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="uslugi" Height="600" Width="600" ResizeMode="NoResize" Closing="Window_Closed">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0048A2" Offset="0.346"/>
+                <GradientStop Color="#FF6FAFFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Button x:Name="form_button" Content="Подать заявку на страхование" FontSize="38" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="574" Height="91" Click="form_button_Click"/>
         <Label x:Name="label_fio" Content="ФИО" Visibility="Hidden" FontSize="38" HorizontalAlignment="Left" Margin="244,195,0,0" VerticalAlignment="Top" Height="64" Width="100"/>
         <TextBox x:Name="fio" FontSize="38" Visibility="Hidden" HorizontalAlignment="Left" Height="82" Margin="35,298,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="523"/>

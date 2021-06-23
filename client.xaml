@@ -7,10 +7,16 @@
         mc:Ignorable="d"
         Title="client" Height="600" Width="600" Closing="Window_Closed" ResizeMode="NoResize">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0048A2" Offset="0.346"/>
+                <GradientStop Color="#FF6FAFFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <ComboBox x:Name="clientlist" HorizontalAlignment="Left" Margin="34,34,0,0" FontSize="38" VerticalAlignment="Top" Width="534" Height="74"/>
         <Button x:Name="button"  Content="Сформировать отчет" FontSize="38" HorizontalAlignment="Left" Margin="34,491,0,0" VerticalAlignment="Top" Width="534" Height="69" Click="button_Click"/>
         <Button x:Name="button1" Content="Открыть образец договора" FontSize="38" HorizontalAlignment="Left" Margin="34,384,0,0" VerticalAlignment="Top" Width="534" Height="74" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Проверить оплату" FontSize="38" HorizontalAlignment="Left" Margin="34,273,0,0" VerticalAlignment="Top" Width="534" Height="76" Click="button2_Click"/>
+       
 
     </Grid>
 </Window>

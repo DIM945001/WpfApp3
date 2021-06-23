@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="reports" Height="600" Width="600" ResizeMode="NoResize" Closing="Window_Closing">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0048A2" Offset="0.346"/>
+                <GradientStop Color="#FF6FAFFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="button2" Content="Проверить оплату" FontSize="38" HorizontalAlignment="Left" Margin="34,273,0,0" VerticalAlignment="Top" Width="534" Height="76" Click="button2_Click"/>
     </Grid>
 </Window>

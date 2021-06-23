@@ -28,7 +28,13 @@ namespace WpfApp3
         {
            
         }
+        private async void button2_Click(object sender, RoutedEventArgs e) // проверка оплаты (кастыль)
+        {
+            button2.Content = "Проверка оплаты...";
+            await Task.Delay(3000);
+            button2.Content = "Оплачено";
 
+        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;

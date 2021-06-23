@@ -130,6 +130,7 @@ namespace WpfApp3
                 //        {
                 if (DATA.trueLogin == true)
                 {
+                    
                     switch (comboBox.Text)
                     {
                         case "Клиент":
@@ -243,6 +244,39 @@ namespace WpfApp3
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            cap();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void button1_Checked(object sender, RoutedEventArgs e)
+        {
+            textBlock.Text = passwordBox.Password;
+            textBlock.Visibility = Visibility.Visible;
+            passwordBox.Visibility = Visibility.Hidden;
+            button1.Content = "*";
+            button1.Foreground = Brushes.LightGray;
+        }
+
+        private void button1_Unchecked(object sender, RoutedEventArgs e)
+        {
+            textBlock.Visibility = Visibility.Hidden;
+            passwordBox.Visibility = Visibility.Visible;
+            button1.Content = "A";
+            button1.Foreground = Brushes.Gray;
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void button2_Click_1(object sender, RoutedEventArgs e)
+        {
+            pwd = null;
+            label4.Content = "";
             cap();
         }
     }

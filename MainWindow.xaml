@@ -6,7 +6,48 @@
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
         Title="Страховая медицинская компания (Авторизация)" ResizeMode="NoResize" Height="600" Width="700" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="#FFA9C9FF" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RoundedBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="15" Background="#FFA9C9FF" BorderThickness="1" Padding="2">
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RoundedPSBoxStyle" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border CornerRadius="15" Background="#FFA9C9FF" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0048A2" Offset="0.346"/>
+                <GradientStop Color="#FF6FAFFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="1*"/>
@@ -16,19 +57,37 @@
             <RowDefinition Height="41*"/>
             <RowDefinition Height="64*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="label" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="36" Content="Страховая медицинская компания" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Margin="6,46,6.6,46.4" Width="581"/>
-        <Label x:Name="label1" Content="Логин" FontSize="42" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" Margin="53,0,19,95.4" Height="59" Width="128"/>
-        <Label x:Name="label2" Content="Пароль" HorizontalAlignment="Center" FontSize="38" Grid.Row="1" VerticalAlignment="Center" Margin="56,96.6,480.6,0.4" Height="67" Width="157" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Height="59" Margin="159,9.6,0,0" Grid.Row="1" FontSize="38" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="278"/>
-        <PasswordBox x:Name="passwordBox" Grid.Column="1" HorizontalAlignment="Left" Margin="159,96.6,0,0" Grid.Row="1" VerticalAlignment="Top" Height="67" Width="278" FontSize="38"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="33,168.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="167" Height="53" FontSize="25">
+        <Label x:Name="label" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="36" Content="Страховая медицинская компания" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Margin="33,46,32.6,46.4" Width="628" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="label1" Content="Логин" FontSize="42" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" Margin="43,0,10,95.4" Height="59" Width="147" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="label2" Content="Пароль" HorizontalAlignment="Center" FontSize="38" Grid.Row="1" VerticalAlignment="Center" Margin="43,96.6,0,0.4" Height="67" Width="157" Foreground="White" FontWeight="Bold"/>
+        <TextBox x:Name="textBox"  Grid.Column="1" HorizontalAlignment="Left" Height="59" Margin="100,9.6,0,0" Grid.Row="1" FontSize="38" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="278" Background="#FFACDAFF"/>
+        <PasswordBox x:Name="passwordBox"  Grid.Column="1" HorizontalAlignment="Left" Margin="100,96.6,0,0" Grid.Row="1" VerticalAlignment="Top" Height="67" Width="278" FontSize="38" Background="#FFACDAFF"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="33,168.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="167" Height="53" FontSize="25" BorderBrush="#FFACDAFF" Background="#FFACDAFF">
             <ComboBoxItem Content="Клиент"/>
             <ComboBoxItem Content="Инспектор"/>
             <ComboBoxItem Content="Бухгалтер"/>
         </ComboBox>
-        <Button x:Name="button" FontSize="38" Content="Войти" Grid.Column="1" HorizontalAlignment="Left" Margin="159,168.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="278" Height="53" Click="button_Click"/>
-        <Label x:Name="label3" FontSize="38" Content="Капча" HorizontalAlignment="Left" Margin="56,31.6,0,0" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="147" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="textbox12" FontSize="38" Grid.Column="1" HorizontalAlignment="Left" Margin="159,31.6,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="-0.573,0.031" Height="54" Width="278"/>
-        <Label x:Name="label4" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="80,130.6,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Button x:Name="button" FontSize="38"  Style="{StaticResource RoundedButtonStyle}" Content="Войти" Grid.Column="1" HorizontalAlignment="Left" Margin="100,168.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="278" Height="53" Click="button_Click"/>
+        <Label x:Name="label3" FontSize="38" Content="Капча" HorizontalAlignment="Left" Margin="43,19.6,0,0" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="147" Foreground="White" FontWeight="Bold"/>
+        <TextBox x:Name="textbox12" FontSize="38" Grid.Column="1" HorizontalAlignment="Left" Margin="100,31.6,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="-0.573,0.031" Height="54" Width="278" Background="#FFACDAFF"/>
+
+        <Label x:Name="label4" FontSize="30" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="100,104.6,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.958,0.348" Height="48" Width="77">
+            <Label.Background>
+                <ImageBrush TileMode="FlipX" ImageSource="Безымяsadasdнный.png"/>
+            </Label.Background>
+        </Label>
+        <TextBlock x:Name="textBlock" Visibility="Hidden" FontSize="38" Grid.Column="1" HorizontalAlignment="Left" Margin="159,96.6,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="67" Width="278"/>
+        <CheckBox x:Name="button1" Content="A" FontSize="30" Grid.Column="1" HorizontalAlignment="Left" Margin="322,96.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="56" Height="67" Click="button1_Click" Checked="button1_Checked" Unchecked="button1_Unchecked" Foreground="#FF686868"/>
+        <Button x:Name="button2"  Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="198,104.6,0,0" VerticalAlignment="Top" Width="58" Height="48" Grid.Row="2" Click="button2_Click_1">
+            <Button.Foreground>
+                <ImageBrush ImageSource="Безымяasdнный.png"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <ImageBrush ImageSource="Безымяasdнный.png"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="Безымяasdнный.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

@@ -52,12 +52,6 @@ namespace WpfApp3
             Hide();
         }
 
-        private async void button2_Click(object sender, RoutedEventArgs e) // проверка оплаты (кастыль)
-        {
-            button2.Content = "Проверка оплаты...";
-            await Task.Delay(3000);
-            button2.Content = "Оплачено";
-            
-        }
+        
     }
 }
