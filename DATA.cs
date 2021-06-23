@@ -14,6 +14,7 @@ namespace WpfApp3
        public static bool trueLogin;
         public static int ms= 0;
         public static int c = 0;
+        public static string uslugbuffer;
     }
 
 }

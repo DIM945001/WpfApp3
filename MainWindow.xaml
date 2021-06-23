@@ -71,7 +71,7 @@
         <Label x:Name="label3" FontSize="38" Content="Капча" HorizontalAlignment="Left" Margin="43,19.6,0,0" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="147" Foreground="White" FontWeight="Bold"/>
         <TextBox x:Name="textbox12" FontSize="38" Grid.Column="1" HorizontalAlignment="Left" Margin="100,31.6,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="-0.573,0.031" Height="54" Width="278" Background="#FFACDAFF"/>
 
-        <Label x:Name="label4" FontSize="30" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="100,104.6,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.958,0.348" Height="48" Width="77">
+        <Label x:Name="label4" FontSize="30" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="100,104.6,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.958,0.348" Height="48" Width="93">
             <Label.Background>
                 <ImageBrush TileMode="FlipX" ImageSource="Безымяsadasdнный.png"/>
             </Label.Background>

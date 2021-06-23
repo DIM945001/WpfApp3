@@ -35,18 +35,18 @@ namespace WpfApp3
             {
             
             ss--;
-            label2.Text ="время сеанса" + ss + "с";
+            label2.Text ="время сеанса " + ss + "с ";
             if (ss == 300)
             {
-                label2.Text = "через" + ss + "с будет автоматический выход из системы";
+                MessageBox.Show("Через 5 минут будет автоматический выход из системы");
             }
         }
 
 
         private void timerTick(object sender, EventArgs e)
         {
-            
-            MessageBox.Show("sho");
+
+            App.Current.Shutdown();
         }
 
 

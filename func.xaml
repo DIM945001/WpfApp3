@@ -30,8 +30,8 @@
         <Button Style="{StaticResource RoundedButtonStyle}" x:Name="listbut"  FontSize="38" Content="Список клиентов" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="674" Height="105" Click="listbut_Click"/>
         <Button Style="{StaticResource RoundedButtonStyle}" x:Name="taskbut"  FontSize="38" Content="Отчеты" HorizontalAlignment="Left" Margin="10,378,0,0" VerticalAlignment="Top" Width="674" Height="105" Click="taskbut_Click"/>
         <Button Style="{StaticResource RoundedButtonStyle}" x:Name="button" Content="Сменить пользователя" FontSize="29" HorizontalAlignment="Left" Margin="339,10,0,0" VerticalAlignment="Top" Width="345" Height="60" Click="button_Click"/>
-        <Label x:Name="label" FontSize="15" Content="Вы вошли как:" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="113" Height="60"/>
-        <TextBlock x:Name="label1" FontSize="15" TextWrapping="Wrap" Text="null" HorizontalAlignment="Left" Margin="144,10,0,0" VerticalAlignment="Top" Width="173" Height="57"/>
+        <Label x:Name="label" FontSize="15" Content="Вы вошли как:" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="113" Height="60" Foreground="White"/>
+        <TextBlock x:Name="label1" FontSize="15" TextWrapping="Wrap" Text="null" HorizontalAlignment="Left" Margin="144,10,0,0" VerticalAlignment="Top" Width="173" Height="60" Foreground="White"/>
         <TextBlock FontSize="30" x:Name="label2" TextWrapping="Wrap" Text="Label" HorizontalAlignment="Left" Margin="26,510,0,0" VerticalAlignment="Top" Height="50" Width="658" Foreground="White"/>
 
     </Grid>

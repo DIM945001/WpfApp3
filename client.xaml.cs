@@ -32,7 +32,7 @@ namespace WpfApp3
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            DATA.reportbuffer = "Отчет №00001 " + DATA.buffer + "Услуга: " + DATA.uslugbuffer + "Медицинское учереждение:Название"; 
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

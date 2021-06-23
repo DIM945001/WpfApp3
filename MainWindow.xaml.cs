@@ -60,7 +60,7 @@ namespace WpfApp3
             }
             i = 0;
         }
-        int ss = 0;
+        int sss = 0;
         double i = 0;
         string login = "login";
         string pass = "qwerty";
@@ -79,7 +79,8 @@ namespace WpfApp3
                         }
                         else
                         {
-                            MessageBox.Show("Неверная капча, вход будет заблокирован на " + ss + " секунд");
+                            sss += 4;
+                            MessageBox.Show("Неверная капча, вход будет заблокирован на " + sss + " секунд");
                             DATA.c += 1;
                             dd();
                         }
@@ -88,13 +89,15 @@ namespace WpfApp3
                     {
                         if (passwordBox.Password == "")
                         {
-                            MessageBox.Show("где пароль, вход будет заблокирован на " + ss + " секунд");
+                            sss += 4;
+                            MessageBox.Show("где пароль, вход будет заблокирован на " + sss + " секунд");
                             DATA.c += 1;
                             dd();
                         }
                         else
                         {
-                            MessageBox.Show("неверный пароль, вход будет заблокирован на " + ss + " секунд");
+                            sss += 4;
+                            MessageBox.Show("неверный пароль, вход будет заблокирован на " + sss + " секунд");
                             DATA.c += 1;
                             dd();
                         }
@@ -104,8 +107,8 @@ namespace WpfApp3
                 {
                     if (textBox.Text == "")
                     {
-                        ss += 4;
-                        MessageBox.Show("где логин, вход будет заблокирован на " + ss + " секунд");
+                        sss += 4;
+                        MessageBox.Show("где логин, вход будет заблокирован на " + sss + " секунд");
                         DATA.c += 1;
                         dd(); 
                         
@@ -113,7 +116,8 @@ namespace WpfApp3
                     }
                     else
                     {
-                        MessageBox.Show("неверный логин, вход будет заблокирован на " + ss + " секунд");
+                        sss += 4;
+                        MessageBox.Show("неверный логин, вход будет заблокирован на " + sss + " секунд");
                       DATA.c += 1;
                       dd();
                     }

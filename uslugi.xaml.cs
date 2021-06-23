@@ -32,6 +32,8 @@ namespace WpfApp3
             label_fio.Visibility = Visibility.Visible;
             fio.Visibility = Visibility.Visible;
             send.Visibility = Visibility.Visible;
+            label.Visibility = Visibility.Visible;
+            textBox.Visibility = Visibility.Visible;
         }
 
         private void send_Click(object sender, RoutedEventArgs e)
@@ -40,7 +42,7 @@ namespace WpfApp3
 
             MessageBox.Show("OK");
             DATA.buffer = fio.Text;
-            
+            DATA.uslugbuffer = textBox.Text;
             client.clientlist.Items.Add(DATA.buffer);
             
          
