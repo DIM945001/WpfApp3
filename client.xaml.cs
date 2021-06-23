@@ -38,21 +38,21 @@ namespace WpfApp3
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             string path = "C:\\Users\\DIMANI4\\Source\\Repos\\DIM945001\\_test_\\dogovor-dms.doc";
-            Process.Start(path);
+            Process.Start(path); // открывает файл по расположению, указанному в path
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
             
         }
-
+               
         private void Window_Closed(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
             Hide();
         }
 
-        private async void button2_Click(object sender, RoutedEventArgs e)
+        private async void button2_Click(object sender, RoutedEventArgs e) // проверка оплаты (кастыль)
         {
             button2.Content = "Проверка оплаты...";
             await Task.Delay(3000);

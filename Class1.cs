@@ -10,7 +10,7 @@ namespace WpfApp3
     {
         
         
-        public func Funct = new func();
+        public func Funct = new func(); // вызов главного окна
         
 
     }

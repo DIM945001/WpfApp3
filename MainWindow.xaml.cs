@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace WpfApp3
 {
     /// <summary>
@@ -26,6 +27,7 @@ namespace WpfApp3
             InitializeComponent();
         }
         Class1 c1 = new Class1();
+        String pwd = "";
 
         //public DataTable Select(string selectSQL) // функция подключения к базе данных и обработка запросов
         // {
@@ -42,57 +44,137 @@ namespace WpfApp3
 
         // }
 
-       
-        private void button_Click(object sender, RoutedEventArgs e)
+        string login = "login";
+        string pass = "qwerty";
+        private async void button_Click(object sender, RoutedEventArgs e)
         {
+            if (comboBox.Text != "")
+            {
+                if (login == textBox.Text)
+                {
+                    if (pass == passwordBox.Password)
+                    {
+                        if (textbox12.Text == label4.Content.ToString())
+                        {
+                            MessageBox.Show("Вы авторизованы");
+                            DATA.trueLogin = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Неверная капча");
+                            button.IsEnabled = false;
+                            await Task.Delay(4000);
+                            button.IsEnabled = true;
+                        }
+                    }
+                    else
+                    {
+                        if (passwordBox.Password == "")
+                        {
+                            MessageBox.Show("где пароль");
+                            button.IsEnabled = false;
+                            await Task.Delay(4000);
+                            button.IsEnabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("неверный пароль");
+                            button.IsEnabled = false;
+                            await Task.Delay(4000);
+                            button.IsEnabled = true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (textBox.Text == "")
+                    {
+                        MessageBox.Show("где логин");
+                        button.IsEnabled = false;
+                        await Task.Delay(4000);
+                        button.IsEnabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("неверный логин");
+                        button.IsEnabled = false;
+                        await Task.Delay(4000);
+                        button.IsEnabled = true;
+                    }
+                }
 
 
-            //if (textbox1.Text.Length > 0) // проверяем введён ли логин     
-            //{
-            //    if (textbox2.Password.Length > 0) // проверяем введён ли пароль         
-            //    {             // ищем в базе данных пользователя с такими данными         
-            //        DataTable dt_user = Select("SELECT * FROM [dbo].[users] WHERE [login] = '" + textbox1.Text + "' AND [password] = '" + textbox2.Password + "'");
-            //        if (dt_user.Rows.Count > 0) // если такая запись существует       
-            //        {
-        
-            switch (comboBox.Text)
-            {
-                case "Клиент":
-                    c1.Funct.label1.Content = "Клиент";
-                    c1.Funct.listbut.Visibility = Visibility.Hidden;
-                    c1.Funct.taskbut.Visibility = Visibility.Hidden;
-                    break;
-                case "Инспектор":
-                    c1.Funct.uslug_but.Visibility = Visibility.Hidden;
-                    c1.Funct.listbut.Visibility = Visibility.Visible;
-                    c1.Funct.label1.Content = "Инспектор";
-                    break;
-                case "Бухгалтер":
-                    c1.Funct.listbut.Visibility = Visibility.Visible;
-                    c1.Funct.taskbut.Visibility = Visibility.Visible;
-                    c1.Funct.label1.Content = "Бухгалтер";
-                    break;
 
+                //if (textbox1.Text.Length > 0) // проверяем введён ли логин     
+                //{
+                //    if (textbox2.Password.Length > 0) // проверяем введён ли пароль         
+                //    {             // ищем в базе данных пользователя с такими данными         
+                //        DataTable dt_user = Select("SELECT * FROM [dbo].[users] WHERE [login] = '" + textbox1.Text + "' AND [password] = '" + textbox2.Password + "'");
+                //        if (dt_user.Rows.Count > 0) // если такая запись существует       
+                //        {
+                if (DATA.trueLogin == true)
+                {
+                    switch (comboBox.Text)
+                    {
+                        case "Клиент":
+                            c1.Funct.label1.Content = "Клиент";
+                            c1.Funct.uslug_but.IsEnabled = true;
+                            c1.Funct.listbut.IsEnabled = false;
+                            c1.Funct.taskbut.IsEnabled = false;
+                            break;
+                        case "Инспектор":
+                            c1.Funct.uslug_but.IsEnabled = false;
+                            c1.Funct.listbut.IsEnabled = true;
+                            c1.Funct.taskbut.IsEnabled = false;
+                            c1.Funct.label1.Content = "Инспектор";
+                            break;
+                        case "Бухгалтер":
+                            c1.Funct.uslug_but.IsEnabled = false;
+                            c1.Funct.listbut.IsEnabled = false;
+                            c1.Funct.taskbut.IsEnabled = true;
+                            c1.Funct.label1.Content = "Бухгалтер";
+                            break;
+
+
+                    }
+                    //  MessageBoxResult messageBoxResult = MessageBox.Show("Пользователь авторизовался", comboBox.Text); // говорим, что авторизовался
+                    this.Visibility = Visibility.Hidden;
+                    try
+                    {
+                        c1.Funct.ShowDialog();
+                        if (DATA.b == 1)
+                        {
+                            this.Visibility = Visibility.Visible;
+                            passwordBox.Password = null;
+                            textBox.Text = null;
+                            textbox12.Text = null;
+                            comboBox.Text = null;
+                            pwd = null;
+                            label4.Content = "";
+                            cap();
+                        }
+                        DATA.b = 0;
+                    }
+                    catch
+                    {
+
+                        // c1.Funct.Visibility = Visibility.Visible;
+
+                    }
+
+                }
+                else
+                {
+                    return;
+                }
             }
-            MessageBoxResult messageBoxResult = MessageBox.Show("Пользователь авторизовался", comboBox.Text); // говорим, что авторизовался
-            this.Visibility = Visibility.Hidden;
-            try
-            {
-                c1.Funct.ShowDialog();
-                    if (DATA.b == 1)
-            {
-                this.Visibility = Visibility.Visible;
-            }
-                DATA.b = 0;
-            }
-            catch
+            else
             {
                 
-               // c1.Funct.Visibility = Visibility.Visible;
+                DATA.trueLogin = false;
+                MessageBox.Show("Не выбрана роль");
                 
             }
-            
-
         }
 
     
@@ -100,6 +182,54 @@ namespace WpfApp3
         {
             Application.Current.Shutdown();
         }
+
+        void cap()
+        {
+            {
+
+                String allowchar = " "; // там будет символ вместо пробела
+
+                allowchar = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
+
+                allowchar += "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,y,z";
+
+                allowchar += "1,2,3,4,5,6,7,8,9,0";
+
+                char[] a = { ',' }; 
+
+               String[] ar = allowchar.Split(a); //
+
+
+
+                string temp = " "; //
+
+                Random r = new Random(); 
+
+
+
+                for (int i = 0; i < 6; i++) // 
+
+                {
+
+                    temp = ar[(r.Next(0, ar.Length))];
+
+
+
+                    pwd += temp;
+
+                }
+
+                label4.Content = pwd;
+
+            }
+        }
+       
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            cap();
+        }
     }
-}
+    }
+
 
