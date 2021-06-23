@@ -6,6 +6,19 @@
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
         Title="reports" Height="600" Width="600" ResizeMode="NoResize" Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="#FFA9C9FF" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -13,6 +26,6 @@
                 <GradientStop Color="#FF6FAFFF" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="button2" Content="Проверить оплату" FontSize="38" HorizontalAlignment="Left" Margin="34,273,0,0" VerticalAlignment="Top" Width="534" Height="76" Click="button2_Click"/>
+        <Button Style="{StaticResource RoundedButtonStyle}" x:Name="button2" Content="Проверить оплату" FontSize="38" HorizontalAlignment="Left" Margin="34,273,0,0" VerticalAlignment="Top" Width="534" Height="76" Click="button2_Click"/>
     </Grid>
 </Window>

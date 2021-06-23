@@ -6,6 +6,19 @@
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
         Title="client" Height="600" Width="600" Closing="Window_Closed" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="15" Background="#FFA9C9FF" BorderThickness="1" Padding="2">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,8 +27,8 @@
             </LinearGradientBrush>
         </Grid.Background>
         <ComboBox x:Name="clientlist" HorizontalAlignment="Left" Margin="34,34,0,0" FontSize="38" VerticalAlignment="Top" Width="534" Height="74"/>
-        <Button x:Name="button"  Content="Сформировать отчет" FontSize="38" HorizontalAlignment="Left" Margin="34,491,0,0" VerticalAlignment="Top" Width="534" Height="69" Click="button_Click"/>
-        <Button x:Name="button1" Content="Открыть образец договора" FontSize="38" HorizontalAlignment="Left" Margin="34,384,0,0" VerticalAlignment="Top" Width="534" Height="74" Click="button1_Click"/>
+        <Button Style="{StaticResource RoundedButtonStyle}" x:Name="button"  Content="Сформировать отчет" FontSize="38" HorizontalAlignment="Left" Margin="34,491,0,0" VerticalAlignment="Top" Width="534" Height="69" Click="button_Click"/>
+        <Button x:Name="button1" Style="{StaticResource RoundedButtonStyle}" Content="Открыть образец договора" FontSize="38" HorizontalAlignment="Left" Margin="34,384,0,0" VerticalAlignment="Top" Width="534" Height="74" Click="button1_Click"/>
        
 
     </Grid>
