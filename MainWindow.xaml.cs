@@ -43,10 +43,28 @@ namespace WpfApp3
         // return dataTable;
 
         // }
+        private  void auth_delay()
+        {
+            
+        }
 
+        private async void dd()
+        {
+            
+            while (i < DATA.c)
+            {
+                button.IsEnabled = false;
+                await Task.Delay(4000);
+                button.IsEnabled = true;
+                i ++;
+            }
+            i = 0;
+        }
+        int ss = 0;
+        double i = 0;
         string login = "login";
         string pass = "qwerty";
-        private async void button_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
             if (comboBox.Text != "")
             {
@@ -61,27 +79,24 @@ namespace WpfApp3
                         }
                         else
                         {
-                            MessageBox.Show("Неверная капча");
-                            button.IsEnabled = false;
-                            await Task.Delay(4000);
-                            button.IsEnabled = true;
+                            MessageBox.Show("Неверная капча, вход будет заблокирован на " + ss + " секунд");
+                            DATA.c += 1;
+                            dd();
                         }
                     }
                     else
                     {
                         if (passwordBox.Password == "")
                         {
-                            MessageBox.Show("где пароль");
-                            button.IsEnabled = false;
-                            await Task.Delay(4000);
-                            button.IsEnabled = true;
+                            MessageBox.Show("где пароль, вход будет заблокирован на " + ss + " секунд");
+                            DATA.c += 1;
+                            dd();
                         }
                         else
                         {
-                            MessageBox.Show("неверный пароль");
-                            button.IsEnabled = false;
-                            await Task.Delay(4000);
-                            button.IsEnabled = true;
+                            MessageBox.Show("неверный пароль, вход будет заблокирован на " + ss + " секунд");
+                            DATA.c += 1;
+                            dd();
                         }
                     }
                 }
@@ -89,17 +104,18 @@ namespace WpfApp3
                 {
                     if (textBox.Text == "")
                     {
-                        MessageBox.Show("где логин");
-                        button.IsEnabled = false;
-                        await Task.Delay(4000);
-                        button.IsEnabled = true;
+                        ss += 4;
+                        MessageBox.Show("где логин, вход будет заблокирован на " + ss + " секунд");
+                        DATA.c += 1;
+                        dd(); 
+                        
+                        
                     }
                     else
                     {
-                        MessageBox.Show("неверный логин");
-                        button.IsEnabled = false;
-                        await Task.Delay(4000);
-                        button.IsEnabled = true;
+                        MessageBox.Show("неверный логин, вход будет заблокирован на " + ss + " секунд");
+                      DATA.c += 1;
+                      dd();
                     }
                 }
 
@@ -117,7 +133,7 @@ namespace WpfApp3
                     switch (comboBox.Text)
                     {
                         case "Клиент":
-                            c1.Funct.label1.Content = "Клиент";
+                            c1.Funct.label1.Text = "Андреев Дмитрий Алексеевич ,Клиент";
                             c1.Funct.uslug_but.IsEnabled = true;
                             c1.Funct.listbut.IsEnabled = false;
                             c1.Funct.taskbut.IsEnabled = false;
@@ -126,13 +142,13 @@ namespace WpfApp3
                             c1.Funct.uslug_but.IsEnabled = false;
                             c1.Funct.listbut.IsEnabled = true;
                             c1.Funct.taskbut.IsEnabled = false;
-                            c1.Funct.label1.Content = "Инспектор";
+                            c1.Funct.label1.Text = "Андреев Дмитрий Алексеевич ,Инспектор";
                             break;
                         case "Бухгалтер":
                             c1.Funct.uslug_but.IsEnabled = false;
                             c1.Funct.listbut.IsEnabled = false;
                             c1.Funct.taskbut.IsEnabled = true;
-                            c1.Funct.label1.Content = "Бухгалтер";
+                            c1.Funct.label1.Text = "Андреев Дмитрий Алексеевич ,Бухгалтер";
                             break;
 
 
@@ -170,14 +186,14 @@ namespace WpfApp3
             }
             else
             {
-                
+
                 DATA.trueLogin = false;
                 MessageBox.Show("Не выбрана роль");
-                
+
             }
         }
 
-    
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
@@ -207,7 +223,7 @@ namespace WpfApp3
 
 
 
-                for (int i = 0; i < 6; i++) // 
+                for (int i = 0; i < 4; i++) // 
 
                 {
 
