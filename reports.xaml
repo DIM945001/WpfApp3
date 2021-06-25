@@ -27,5 +27,6 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Button Style="{StaticResource RoundedButtonStyle}" x:Name="button2" Content="Проверить оплату" FontSize="38" HorizontalAlignment="Left" Margin="34,273,0,0" VerticalAlignment="Top" Width="534" Height="76" Click="button2_Click"/>
+        <Button Style="{StaticResource RoundedButtonStyle}" x:Name="button2_Copy" Content="Проверить отчет" FontSize="38" HorizontalAlignment="Left" Margin="34,390,0,0" VerticalAlignment="Top" Width="534" Height="76" Click="button21_Click"/>
     </Grid>
 </Window>

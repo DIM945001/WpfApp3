@@ -35,6 +35,12 @@ namespace WpfApp3
             button2.Content = "Оплачено";
 
         }
+
+        private async void button21_Click(object sender, RoutedEventArgs e) // проверка оплаты (кастыль)
+        {
+            MessageBox.Show(DATA.reportbuffer);
+
+        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
