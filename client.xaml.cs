@@ -29,10 +29,12 @@ namespace WpfApp3
             
             InitializeComponent();
         }
+        int count = 0;
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            DATA.reportbuffer = "Отчет №00001 " + DATA.buffer + "Услуга: " + DATA.uslugbuffer + "Медицинское учереждение:Название"; 
+            count++;
+            DATA.reportbuffer = "Отчет №"+ count + " " + DATA.buffer + "Услуга: " + DATA.uslugbuffer + "Медицинское учереждение: " + comboBox1.Text; 
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
