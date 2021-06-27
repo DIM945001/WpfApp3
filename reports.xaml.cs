@@ -36,7 +36,7 @@ namespace WpfApp3
 
         }
 
-        private async void button21_Click(object sender, RoutedEventArgs e) // проверка оплаты (кастыль)
+        private void button21_Click(object sender, RoutedEventArgs e) // проверка оплаты (кастыль)
         {
             MessageBox.Show(DATA.reportbuffer);
 

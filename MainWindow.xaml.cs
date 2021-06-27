@@ -144,16 +144,36 @@ namespace WpfApp3
                             c1.Funct.taskbut.IsEnabled = false;
                             break;
                         case "Инспектор":
-                            c1.Funct.uslug_but.IsEnabled = false;
-                            c1.Funct.listbut.IsEnabled = true;
-                            c1.Funct.taskbut.IsEnabled = false;
-                            c1.Funct.label1.Text = "Андреев Дмитрий Алексеевич ,Инспектор";
+                            if (textBox.Text == "inspector")
+                            {
+                                c1.Funct.uslug_but.IsEnabled = false;
+                                c1.Funct.listbut.IsEnabled = true;
+                                c1.Funct.taskbut.IsEnabled = false;
+                                c1.Funct.label1.Text = "Андреев Дмитрий Алексеевич ,Инспектор";
+                            }
+                            else
+                            {
+                                sss += 4;
+                                MessageBox.Show("неверный логин, вход будет заблокирован на " + sss + " секунд");
+                                DATA.c += 1;
+                                dd();
+                            }
                             break;
                         case "Бухгалтер":
-                            c1.Funct.uslug_but.IsEnabled = false;
-                            c1.Funct.listbut.IsEnabled = false;
-                            c1.Funct.taskbut.IsEnabled = true;
-                            c1.Funct.label1.Text = "Андреев Дмитрий Алексеевич ,Бухгалтер";
+                            if (textBox.Text == "booker")
+                            {
+                                c1.Funct.uslug_but.IsEnabled = false;
+                                c1.Funct.listbut.IsEnabled = false;
+                                c1.Funct.taskbut.IsEnabled = true;
+                                c1.Funct.label1.Text = "Андреев Дмитрий Алексеевич ,Бухгалтер";
+                            }
+                            else
+                            {
+                                sss += 4;
+                                MessageBox.Show("неверный логин, вход будет заблокирован на " + sss + " секунд");
+                                DATA.c += 1;
+                                dd();
+                            }
                             break;
 
 
