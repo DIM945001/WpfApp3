@@ -40,7 +40,7 @@ namespace WpfApp3
         {
             
 
-            MessageBox.Show("OK");
+            MessageBox.Show("Заявка отправлена, обратитесь в Страховую медицинскую организацию");
             DATA.buffer = fio.Text;
             DATA.uslugbuffer = textBox.Text;
             client.clientlist.Items.Add(DATA.buffer);

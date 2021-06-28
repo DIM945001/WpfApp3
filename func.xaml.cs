@@ -68,6 +68,7 @@ namespace WpfApp3
         private void taskbut_Click(object sender, RoutedEventArgs e)
         {
             Uslugi.client.Reports.Show();
+            Uslugi.client.Reports.dataGrid.Items.Add(DATA.reportbuffer);
         }
 
         
